@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="ZZT.MTHBLL/ZZT.MTHBLL.csproj" Id="3dd96a8e-1b7d-4a22-9eab-cd3370165362" />
+  <Project Path="ZZT.MTHControlLib/ZZT.MTHControlLib.csproj" Id="16f3b3e1-bbaa-4acd-8696-56a453d9ad37" />
+  <Project Path="ZZT.MTHDAL/ZZT.MTHDAL.csproj" Id="32ff897f-85a4-4b57-ab52-f8c0866b1f8c" />
+  <Project Path="ZZT.MTHHelper/ZZT.MTHHelper.csproj" Id="1def5d34-503c-44f3-ac0b-13a24059b37d" />
+  <Project Path="ZZT.MTHModels/ZZT.MTHModels.csproj" Id="9e0f7353-f203-4218-8238-cd211339d47c" />
+  <Project Path="ZZT.MTHProject/ZZT.MTHProject.csproj" Id="75e6a767-3655-4188-b674-16afbc594d58" />
+</Solution>
