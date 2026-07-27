@@ -587,6 +587,7 @@ namespace ZZT.MTHProject
                     switch (formNames)
                     {
                         case FormNames.参数设置:
+                            CurrentIndex = 1;
                             if (!CommonMethods.CurrentAdmin.ParamSet)
                             {
                                 new FrmMsgBoxWithoutAck("用户权限不足，请切换用户！", "权限不足").ShowDialog();
@@ -594,6 +595,7 @@ namespace ZZT.MTHProject
                             }
                             break;
                         case FormNames.配方管理:
+                            CurrentIndex = 2;
                             if (!CommonMethods.CurrentAdmin.Recipe)
                             {
                                 new FrmMsgBoxWithoutAck("用户权限不足，请切换用户！", "权限不足").ShowDialog();
@@ -601,6 +603,7 @@ namespace ZZT.MTHProject
                             }
                             break;
                         case FormNames.报警追溯:
+                            CurrentIndex = 3;
                             if (!CommonMethods.CurrentAdmin.HistoryLog)
                             {
                                 new FrmMsgBoxWithoutAck("用户权限不足，请切换用户！", "权限不足").ShowDialog();
@@ -608,6 +611,7 @@ namespace ZZT.MTHProject
                             }
                             break;
                         case FormNames.历史趋势:
+                            CurrentIndex = 4;
                             if (!CommonMethods.CurrentAdmin.HistoryTrend)
                             {
                                 new FrmMsgBoxWithoutAck("用户权限不足，请切换用户！", "权限不足").ShowDialog();
@@ -615,6 +619,7 @@ namespace ZZT.MTHProject
                             }
                             break;
                         case FormNames.用户管理:
+                            CurrentIndex = 5;
                             if (!CommonMethods.CurrentAdmin.UserManage)
                             {
                                 new FrmMsgBoxWithoutAck("用户权限不足，请切换用户！", "权限不足").ShowDialog();
