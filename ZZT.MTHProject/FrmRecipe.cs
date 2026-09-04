@@ -23,6 +23,13 @@ namespace ZZT.MTHProject
         public FrmRecipe(string devPath)
         {
             InitializeComponent();
+
+            //确保Recipe目录存在，首次运行时自动创建，避免目录不存在导致的异常
+            if (!Directory.Exists(basePath))
+            {
+                Directory.CreateDirectory(basePath);
+            }
+
             // 显示当前设备应用中的配方名称
             this.lbl_CurrentRecipe.Text = CommonMethods.Device.CurrentRecipe;
             // 将当前配方名称回填到输入框，便于直接修改或应用
@@ -344,9 +351,16 @@ namespace ZZT.MTHProject
         #region 获取所有配方
         /// <summary>
         /// 遍历Recipe目录下所有 .ini 文件，反序列化为RecipeInfo列表
+        /// 容错处理：如果Recipe目录不存在则自动创建，避免首次运行时抛出异常
         /// </summary>
         private List<RecipeInfo> GetAllRecipe()
         {
+            //目录不存在时自动创建，确保首次运行也能正常工作
+            if (!Directory.Exists(basePath))
+            {
+                Directory.CreateDirectory(basePath);
+            }
+
             DirectoryInfo directoryInfo = new DirectoryInfo(basePath);
             List<FileInfo> fileInfos = directoryInfo.GetFiles("*.ini").ToList();
             List<RecipeInfo> recipeInfos = new List<RecipeInfo>();

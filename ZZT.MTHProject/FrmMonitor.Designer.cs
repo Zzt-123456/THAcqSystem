@@ -30,7 +30,7 @@ namespace ZZT.MTHProject
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMonitor));
-            SeeSharpTools.JY.GUI.StripChartXSeries stripChartXSeries2 = new SeeSharpTools.JY.GUI.StripChartXSeries();
+            SeeSharpTools.JY.GUI.StripChartXSeries stripChartXSeries1 = new SeeSharpTools.JY.GUI.StripChartXSeries();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.MainPanel = new ZZT.MTHControlLib.PanelEnhanced();
             this.thmControl1 = new ZZT.MTHControlLib.THMControl();
@@ -70,7 +70,7 @@ namespace ZZT.MTHProject
             // 
             // MainPanel
             // 
-            this.MainPanel.BackgroundImage = global::ZZT.MTHProject.Properties.Resources.BackGround;
+            this.MainPanel.BackgroundImage = global::ZZT.MTHProject.Properties.Resources.MainPanelBG;
             this.MainPanel.Controls.Add(this.thmControl1);
             this.MainPanel.Controls.Add(this.lst_Info);
             this.MainPanel.Controls.Add(this.checkBoxEx12);
@@ -119,7 +119,7 @@ namespace ZZT.MTHProject
             // 
             // lst_Info
             // 
-            this.lst_Info.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
+            this.lst_Info.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.lst_Info.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
@@ -339,7 +339,7 @@ namespace ZZT.MTHProject
             // 
             // title1
             // 
-            this.title1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
+            this.title1.BackColor = System.Drawing.Color.Transparent;
             this.title1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("title1.BackgroundImage")));
             this.title1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.title1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -369,7 +369,7 @@ namespace ZZT.MTHProject
             // 
             // title2
             // 
-            this.title2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
+            this.title2.BackColor = System.Drawing.Color.Transparent;
             this.title2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("title2.BackgroundImage")));
             this.title2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.title2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -491,9 +491,9 @@ namespace ZZT.MTHProject
             this.chart_ActualTrend.AxisY2.TitlePosition = SeeSharpTools.JY.GUI.StripChartXAxis.AxisTextPosition.Center;
             this.chart_ActualTrend.AxisY2.ViewMaximum = 3.5D;
             this.chart_ActualTrend.AxisY2.ViewMinimum = 0.5D;
-            this.chart_ActualTrend.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
+            this.chart_ActualTrend.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.chart_ActualTrend.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.chart_ActualTrend.ChartAreaBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
+            this.chart_ActualTrend.ChartAreaBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.chart_ActualTrend.Direction = SeeSharpTools.JY.GUI.StripChartX.ScrollDirection.LeftToRight;
             this.chart_ActualTrend.DisplayPoints = 4000;
             this.chart_ActualTrend.Font = new System.Drawing.Font("微软雅黑", 11F);
@@ -503,15 +503,15 @@ namespace ZZT.MTHProject
             this.chart_ActualTrend.LegendFont = new System.Drawing.Font("微软雅黑", 11F);
             this.chart_ActualTrend.LegendForeColor = System.Drawing.Color.White;
             this.chart_ActualTrend.LegendVisible = true;
-            stripChartXSeries2.Color = System.Drawing.Color.Red;
-            stripChartXSeries2.Marker = SeeSharpTools.JY.GUI.StripChartXSeries.MarkerType.None;
-            stripChartXSeries2.Name = "1#站点温度";
-            stripChartXSeries2.Type = SeeSharpTools.JY.GUI.StripChartXSeries.LineType.FastLine;
-            stripChartXSeries2.Visible = true;
-            stripChartXSeries2.Width = SeeSharpTools.JY.GUI.StripChartXSeries.LineWidth.Thin;
-            stripChartXSeries2.XPlotAxis = SeeSharpTools.JY.GUI.StripChartXAxis.PlotAxis.Primary;
-            stripChartXSeries2.YPlotAxis = SeeSharpTools.JY.GUI.StripChartXAxis.PlotAxis.Primary;
-            this.chart_ActualTrend.LineSeries.Add(stripChartXSeries2);
+            stripChartXSeries1.Color = System.Drawing.Color.Red;
+            stripChartXSeries1.Marker = SeeSharpTools.JY.GUI.StripChartXSeries.MarkerType.None;
+            stripChartXSeries1.Name = "1#站点温度";
+            stripChartXSeries1.Type = SeeSharpTools.JY.GUI.StripChartXSeries.LineType.FastLine;
+            stripChartXSeries1.Visible = true;
+            stripChartXSeries1.Width = SeeSharpTools.JY.GUI.StripChartXSeries.LineWidth.Thin;
+            stripChartXSeries1.XPlotAxis = SeeSharpTools.JY.GUI.StripChartXAxis.PlotAxis.Primary;
+            stripChartXSeries1.YPlotAxis = SeeSharpTools.JY.GUI.StripChartXAxis.PlotAxis.Primary;
+            this.chart_ActualTrend.LineSeries.Add(stripChartXSeries1);
             this.chart_ActualTrend.Location = new System.Drawing.Point(813, 55);
             this.chart_ActualTrend.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.chart_ActualTrend.Miscellaneous.CheckInfinity = false;

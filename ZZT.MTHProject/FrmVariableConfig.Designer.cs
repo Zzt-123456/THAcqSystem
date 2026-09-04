@@ -80,9 +80,9 @@ namespace ZZT.MTHProject
             // panelEx1
             // 
             this.panelEx1.BackColor = System.Drawing.Color.Transparent;
-            this.panelEx1.BackgroundImage = global::ZZT.MTHProject.Properties.Resources.BackGround;
+            this.panelEx1.BackgroundImage = global::ZZT.MTHProject.Properties.Resources.MainPanelBG;
             this.panelEx1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelEx1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(79)))), ((int)(((byte)(150)))));
+            this.panelEx1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
             this.panelEx1.BorderWidth = 2;
             this.panelEx1.BottomGap = 1;
             this.panelEx1.Controls.Add(this.chk_NegAlarm);
@@ -151,11 +151,11 @@ namespace ZZT.MTHProject
             this.dgv_Main.AllowUserToDeleteRows = false;
             this.dgv_Main.AllowUserToResizeColumns = false;
             this.dgv_Main.AllowUserToResizeRows = false;
-            this.dgv_Main.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(30)))), ((int)(((byte)(78)))));
+            this.dgv_Main.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.dgv_Main.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv_Main.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(30)))), ((int)(((byte)(78)))));
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -183,7 +183,7 @@ namespace ZZT.MTHProject
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_Main.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_Main.EnableHeadersVisualStyles = false;
-            this.dgv_Main.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(146)))), ((int)(((byte)(235)))));
+            this.dgv_Main.GridColor = System.Drawing.Color.White;
             this.dgv_Main.Location = new System.Drawing.Point(25, 276);
             this.dgv_Main.Name = "dgv_Main";
             this.dgv_Main.ReadOnly = true;
@@ -297,7 +297,7 @@ namespace ZZT.MTHProject
             // 
             // btn_Modify
             // 
-            this.btn_Modify.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(27)))), ((int)(((byte)(78)))));
+            this.btn_Modify.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btn_Modify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Modify.Font = new System.Drawing.Font("微软雅黑", 11F);
             this.btn_Modify.ForeColor = System.Drawing.Color.White;
@@ -311,7 +311,7 @@ namespace ZZT.MTHProject
             // 
             // btn_Delete
             // 
-            this.btn_Delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(27)))), ((int)(((byte)(78)))));
+            this.btn_Delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btn_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Delete.Font = new System.Drawing.Font("微软雅黑", 11F);
             this.btn_Delete.ForeColor = System.Drawing.Color.White;
@@ -325,7 +325,7 @@ namespace ZZT.MTHProject
             // 
             // btn_Add
             // 
-            this.btn_Add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(27)))), ((int)(((byte)(78)))));
+            this.btn_Add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btn_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Add.Font = new System.Drawing.Font("微软雅黑", 11F);
             this.btn_Add.ForeColor = System.Drawing.Color.White;

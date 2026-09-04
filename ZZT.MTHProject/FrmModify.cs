@@ -17,7 +17,7 @@ namespace ZZT.MTHProject
     /// 使用场景：用户在主界面点击某个可写参数时弹出该窗体，输入新值后确认下发。
     /// 窗体无边框，通过 Panel_MouseDown/Panel_MouseMove 实现拖动。
     /// </summary>
-    public partial class FrmModify : Form
+    public partial class FrmModify : System.Windows.Forms.Form
     {
         /// <summary>
         /// 默认构造函数（无实际用途，仅为设计器支持）。

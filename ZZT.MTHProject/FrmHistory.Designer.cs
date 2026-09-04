@@ -268,7 +268,7 @@ namespace ZZT.MTHProject
             // 
             // btn_QuickQuery
             // 
-            this.btn_QuickQuery.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(27)))), ((int)(((byte)(78)))));
+            this.btn_QuickQuery.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btn_QuickQuery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_QuickQuery.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn_QuickQuery.ForeColor = System.Drawing.Color.White;
@@ -328,7 +328,7 @@ namespace ZZT.MTHProject
             // 
             // btn_Query
             // 
-            this.btn_Query.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(27)))), ((int)(((byte)(78)))));
+            this.btn_Query.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btn_Query.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Query.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn_Query.ForeColor = System.Drawing.Color.White;
@@ -342,7 +342,7 @@ namespace ZZT.MTHProject
             // 
             // btn_SaveImage
             // 
-            this.btn_SaveImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(27)))), ((int)(((byte)(78)))));
+            this.btn_SaveImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btn_SaveImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_SaveImage.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn_SaveImage.ForeColor = System.Drawing.Color.White;
@@ -356,7 +356,7 @@ namespace ZZT.MTHProject
             // 
             // btn_ExportCSV
             // 
-            this.btn_ExportCSV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(27)))), ((int)(((byte)(78)))));
+            this.btn_ExportCSV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btn_ExportCSV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ExportCSV.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn_ExportCSV.ForeColor = System.Drawing.Color.White;
@@ -462,9 +462,9 @@ namespace ZZT.MTHProject
             this.chart_HistoryTrend.AxisY2.TitlePosition = SeeSharpTools.JY.GUI.StripChartXAxis.AxisTextPosition.Center;
             this.chart_HistoryTrend.AxisY2.ViewMaximum = 3.5D;
             this.chart_HistoryTrend.AxisY2.ViewMinimum = 0.5D;
-            this.chart_HistoryTrend.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
+            this.chart_HistoryTrend.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.chart_HistoryTrend.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.chart_HistoryTrend.ChartAreaBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
+            this.chart_HistoryTrend.ChartAreaBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.chart_HistoryTrend.Direction = SeeSharpTools.JY.GUI.StripChartX.ScrollDirection.LeftToRight;
             this.chart_HistoryTrend.DisplayPoints = 4000;
             this.chart_HistoryTrend.Font = new System.Drawing.Font("微软雅黑", 11F);
@@ -524,7 +524,7 @@ namespace ZZT.MTHProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::ZZT.MTHProject.Properties.Resources.BackGround;
+            this.BackgroundImage = global::ZZT.MTHProject.Properties.Resources.MainPanelBG;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1394, 736);
             this.Controls.Add(this.chart_HistoryTrend);

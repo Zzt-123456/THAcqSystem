@@ -18,7 +18,7 @@ namespace ZZT.MTHProject
     /// 使用场景：仅作信息提示，无需用户确认的场景，如“查询失败”、“用户名不能为空”等。
     /// 窗体无边框，通过 Panel_MouseDown/Panel_MouseMove 实现拖动。
     /// </summary>
-    public partial class FrmMsgBoxWithoutAck : Form
+    public partial class FrmMsgBoxWithoutAck : System.Windows.Forms.Form
     {
         /// <summary>
         /// 构造函数：根据传入的内容和标题初始化消息框。

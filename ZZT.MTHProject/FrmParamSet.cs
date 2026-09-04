@@ -59,11 +59,6 @@ namespace ZZT.MTHProject
         private Timer updateTimer = new Timer();
 
         /// <summary>
-        /// 记录每个TextSet上一次的本地报警状态，用于检测状态变化
-        /// </summary>
-        private Dictionary<string, bool> lastAlarmState = new Dictionary<string, bool>();
-
-        /// <summary>
         /// 通用事件绑定：遍历界面控件统一绑定交互事件
         /// 1. 为TextSet控件绑定双击事件——双击弹出修改窗体
         /// 2. 为CheckBoxEx控件绑定选中变化事件——勾选时写入从站
@@ -177,6 +172,8 @@ namespace ZZT.MTHProject
                         //2. 本地比较：当前值 vs 限值（来源之二：主站本地比较结果）
                         //两边都已×Scale转换为实际值，直接比较即可
                         bool alarmFromLocal = false;
+                        //标记本地比较是否可用（有当前值和限值且能解析为数值）
+                        bool localCompareAvailable = false;
                         if ((isHigh || isLow) && item.BindVarName != null && item.BindVarName.ToString().Length > 0)
                         {
                             //当前值变量名 = 去掉末尾"高"/"低"后的基础名
@@ -189,31 +186,27 @@ namespace ZZT.MTHProject
                             {
                                 //高报：当前值>限值；低报：当前值<限值
                                 alarmFromLocal = isHigh ? current > limit : current < limit;
+                                localCompareAvailable = true;
                             }
                         }
 
-                        //综合判断：报警启用 且（从站报警 或 本地比较报警）任一成立即报警
-                        bool newAlarmState = alarmEnabled && (alarmFromSlave || alarmFromLocal);
-
-                        //检测报警状态是否发生变化（仅状态跳变时才触发上报，避免重复报警）
-                        string alarmKey = alarmVar;
-                        bool lastState = false;
-                        lastAlarmState.TryGetValue(alarmKey, out lastState);
-
-                        if (newAlarmState != lastState)
+                        //综合判断报警状态
+                        //关键：本地比较可用时以本地比较为准，否则退回使用从站报警位
+                        //原因：从站报警位可能具有锁存特性（触发后不随温度恢复自动清除），
+                        //      不能作为"当前是否处于报警"的可靠依据；本地比较反映实时状态，更可靠
+                        bool newAlarmState;
+                        if (localCompareAvailable)
                         {
-                            //查找报警变量对象，获取Remark等附加信息
-                            var alarmVariable = CommonMethods.FindVariable(alarmVar);
-                            if (alarmVariable != null)
-                            {
-                                //触发设备报警上报（newAlarmState=true为产生报警，false为报警消除）
-                                CommonMethods.Device.RaiseAlarm(newAlarmState, alarmVariable);
-                            }
-                            //更新已记录的上一次报警状态
-                            lastAlarmState[alarmKey] = newAlarmState;
+                            newAlarmState = alarmEnabled && alarmFromLocal;
+                        }
+                        else
+                        {
+                            newAlarmState = alarmEnabled && alarmFromSlave;
                         }
 
-                        //将最新报警状态更新到控件，用于界面高亮显示
+                        //注意：报警事件的触发（日志输出、scrollingAlarm更新）已移至 FrmMain.CheckAlarms 方法
+                        //FrmMain 的 storeTimer 每秒调用 CheckAlarms，确保无论用户在哪个页面报警检测都能正常运行
+                        //此处仅负责更新控件LED显示状态
                         item.IsAlarm = newAlarmState;
                     }
                 }
@@ -334,5 +327,6 @@ namespace ZZT.MTHProject
                 }
             }
         }
+
     }
 }

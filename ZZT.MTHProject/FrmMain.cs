@@ -29,6 +29,32 @@ namespace ZZT.MTHProject
         {
             InitializeComponent();
 
+            //===== 运行时动态赋值所有图片资源（避免 VS 设计器 CodeDom 解析器无法处理 global:: 引用） =====
+            //所有图片资源均在此处运行时加载，Designer.cs 中不再包含任何 global:: 或 resources.GetObject 引用
+            //（MainPanel.BackgroundImage 和 $this.Icon 除外，它们使用标准 resources.GetObject 模式）
+            if (LicenseManager.UsageMode == LicenseUsageMode.Runtime)
+            {
+                //导航按钮背景图
+                this.navi_Monitor.BackgroundImage = Properties.Resources.Left;
+                this.naviButton2.BackgroundImage = Properties.Resources.Left;
+                this.naviButton3.BackgroundImage = Properties.Resources.Left;
+                this.naviButton4.BackgroundImage = Properties.Resources.Right;
+                this.naviButton5.BackgroundImage = Properties.Resources.Right;
+                this.naviButton6.BackgroundImage = Properties.Resources.Right;
+                this.btn_Exit.BackgroundImage = Properties.Resources.Exit;
+                //初始选中状态
+                this.navi_Monitor.IsSelected = true;
+
+                //其他图片资源
+                this.pictureBox1.Image = Properties.Resources.new_logo_42x42;
+                this.AlarmPanel.BackgroundImage = Properties.Resources.Alarm;
+                this.btn_Right.BackgroundImage = Properties.Resources.Right;
+                this.btn_Left.BackgroundImage = Properties.Resources.Left;
+                this.pictureBox2.Image = Properties.Resources.User;
+                this.lbl_Title.Image = Properties.Resources.Current;
+                this.BackgroundImage = Properties.Resources.Main;
+            }
+
             //将界面上的6个导航按钮按顺序加入集合，便于左右切换时按索引定位
             naviButtons.Add(this.navi_Monitor);
             naviButtons.Add(this.naviButton2);
@@ -56,6 +82,9 @@ namespace ZZT.MTHProject
         //定时器触发回调：每秒刷新界面时间和通信状态指示灯，并在通信正常且所有模块数据齐全时将实时数据写入数据库
         private void StoreTimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
         {
+            //Device尚未创建（启动初期FrmMain_Load还未执行完）时跳过本次处理
+            if (CommonMethods.Device == null) return;
+
             //更新时间和通信状态（在UI线程执行，避免跨线程访问控件）
             this.Invoke(new Action(() =>
             {
@@ -102,6 +131,10 @@ namespace ZZT.MTHProject
                     });
                 }
             }
+
+            //报警检测：无论用户在哪个页面都实时检测报警状态
+            //解决原方案中报警检测只在 FrmParamSet 中执行导致集中监控页面无报警的问题
+            CheckAlarms();
         }
 
         //============= 配置文件路径（位于程序目录下Config文件夹中） =============
@@ -117,6 +150,10 @@ namespace ZZT.MTHProject
 
         //当前活动报警列表（ObservableCollection在增删时会触发CollectionChanged事件，进而更新界面滚动报警文字）
         private ObservableCollection<string> actualAlarmList = new ObservableCollection<string>();
+
+        //报警状态字典：记录每个报警变量上一次的报警状态，用于检测状态跳变
+        //由 CheckAlarms 方法维护，确保无论用户在哪个页面报警检测都能正常运行
+        private Dictionary<string, bool> lastAlarmState = new Dictionary<string, bool>();
 
         //系统日志业务对象，负责将报警日志写入数据库
         private SysLogManage sysLogManage = new SysLogManage();
@@ -224,6 +261,84 @@ namespace ZZT.MTHProject
                 if (this.actualAlarmList.Contains(variable.Remark))
                 {
                     this.actualAlarmList.Remove(variable.Remark);
+                }
+            }
+        }
+
+        /// <summary>
+        /// 报警检测：遍历所有变量，对以"高限"/"低限"结尾的限值变量进行本地比较报警检测
+        /// 此方法在 storeTimer 中每秒调用，确保无论用户在哪个页面都能实时检测报警
+        /// 报警状态变化时通过 Device.RaiseAlarm 触发事件，由 Device_AlarmTrigEvent 处理日志和滚动报警
+        ///
+        /// 变量命名规则（参见 FrmParamSet.Designer.cs 中 TextSet 控件配置）：
+        ///   "模块1温度"       = 当前值变量（数值）
+        ///   "模块1温度高"     = 报警标志变量（bool，从站上报）
+        ///   "模块1温度高限"   = 限值变量（数值，本方法遍历的目标）
+        ///   "模块1温度报警启用" = 报警启用开关（bool）
+        /// </summary>
+        private void CheckAlarms()
+        {
+            if (CommonMethods.Device == null || !CommonMethods.Device.IsConnected)
+                return;
+
+            //遍历所有通信组中的变量
+            foreach (var group in CommonMethods.Device.GroupList)
+            {
+                foreach (var variable in group.VarList)
+                {
+                    string varName = variable.VarName;
+
+                    //只处理以"高限"或"低限"结尾的变量（限值变量）
+                    bool isHigh = varName.EndsWith("高限");
+                    bool isLow = varName.EndsWith("低限");
+                    if (!isHigh && !isLow) continue;
+
+                    //推断当前值变量名（去掉"高限"/"低限"后缀）
+                    string currentVarName = varName.Substring(0, varName.Length - 2);
+
+                    //推断报警标志变量名（去掉"限"字，即"模块1温度高限"→"模块1温度高"）
+                    //用于查找报警变量对象获取Remark等附加信息
+                    string alarmVarName = varName.Substring(0, varName.Length - 1);
+
+                    //推断报警启用变量名
+                    string enableVarName = currentVarName + "报警启用";
+
+                    //读取报警启用状态
+                    bool alarmEnabled = true;
+                    object enableValue = CommonMethods.Device[enableVarName];
+                    if (enableValue != null)
+                    {
+                        alarmEnabled = enableValue.ToString() == "1";
+                    }
+
+                    //读取当前值和限值
+                    object currentValue = CommonMethods.Device[currentVarName];
+                    object limitValue = CommonMethods.Device[varName];
+
+                    if (currentValue == null || limitValue == null) continue;
+                    if (!float.TryParse(currentValue.ToString(), out float current)) continue;
+                    if (!float.TryParse(limitValue.ToString(), out float limit)) continue;
+
+                    //本地比较：高报=当前值>限值，低报=当前值<限值
+                    bool alarmFromLocal = isHigh ? current > limit : current < limit;
+                    bool newAlarmState = alarmEnabled && alarmFromLocal;
+
+                    //检测状态变化（仅跳变时触发事件，避免重复报警）
+                    //使用报警标志变量名作为key（与 FrmParamSet 的 lastAlarmState key 保持一致）
+                    string alarmKey = alarmVarName;
+                    bool lastState = false;
+                    lastAlarmState.TryGetValue(alarmKey, out lastState);
+
+                    if (newAlarmState != lastState)
+                    {
+                        //查找报警标志变量对象（"模块1温度高"），获取Remark等附加信息
+                        var alarmVariable = CommonMethods.FindVariable(alarmVarName);
+                        if (alarmVariable != null)
+                        {
+                            CommonMethods.Device.RaiseAlarm(newAlarmState, alarmVariable);
+                        }
+                        lastAlarmState[alarmKey] = newAlarmState;
+                    }
                 }
             }
         }
@@ -841,5 +956,6 @@ namespace ZZT.MTHProject
             }
         }
         #endregion
+
     }
 }

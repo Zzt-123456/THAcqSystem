@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 480" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <rect width="760" height="480" fill="#ffffff"/>
+
+  <text x="20" y="30" font-size="16" font-weight="680" fill="#1a1a2e">配置与数据存储分工矩阵</text>
+  <text x="20" y="50" font-size="12" fill="#6b6b80">三类持久化各司其职：SQL Server 存动态业务数据，INI 存设备/配方配置，Excel 存通信配置</text>
+
+  <rect x="20" y="70" width="720" height="40" fill="#f7f7fb" stroke="#e4e4ec"/>
+  <text x="40" y="95" font-size="12" font-weight="680" fill="#6b6b80" letter-spacing="0.5">存储介质</text>
+  <text x="160" y="95" font-size="12" font-weight="680" fill="#6b6b80" letter-spacing="0.5">文件 / 表</text>
+  <text x="320" y="95" font-size="12" font-weight="680" fill="#6b6b80" letter-spacing="0.5">内容</text>
+  <text x="560" y="95" font-size="12" font-weight="680" fill="#6b6b80" letter-spacing="0.5">访问方式</text>
+  <text x="680" y="95" font-size="12" font-weight="680" fill="#6b6b80" letter-spacing="0.5">操作</text>
+
+  <rect x="20" y="110" width="720" height="44" fill="#ffffff" stroke="#e4e4ec"/>
+  <rect x="20" y="110" width="8" height="44" fill="#7c5cff"/>
+  <text x="40" y="130" font-size="13" font-weight="680" fill="#7c5cff">SQL Server</text>
+  <text x="40" y="146" font-size="11" fill="#6b6b80" font-family="'Cascadia Code', Consolas, monospace">MultiTHMonitorDB</text>
+  <text x="160" y="135" font-size="13" fill="#1a1a2e" font-family="'Cascadia Code', Consolas, monospace">SysAdmin</text>
+  <text x="320" y="135" font-size="12" fill="#1a1a2e">用户账号 + 5 个权限位</text>
+  <text x="560" y="135" font-size="12" fill="#1a1a2e">ADO.NET + SqlParameter</text>
+  <rect x="680" y="120" width="40" height="22" rx="11" fill="#f0ebff"/>
+  <text x="700" y="135" text-anchor="middle" font-size="11" fill="#7c5cff">CRUD</text>
+
+  <rect x="20" y="154" width="720" height="44" fill="#ffffff" stroke="#e4e4ec"/>
+  <text x="160" y="179" font-size="13" fill="#1a1a2e" font-family="'Cascadia Code', Consolas, monospace">ActualData</text>
+  <text x="320" y="179" font-size="12" fill="#1a1a2e">6 站点温湿度快照 (12 字段) + InsertTime</text>
+  <text x="560" y="179" font-size="12" fill="#1a1a2e">ADO.NET 参数化 INSERT</text>
+  <rect x="680" y="164" width="40" height="22" rx="11" fill="#e6fffa"/>
+  <text x="700" y="179" text-anchor="middle" font-size="11" fill="#00a3a3">仅 C</text>
+
+  <rect x="20" y="198" width="720" height="44" fill="#ffffff" stroke="#e4e4ec"/>
+  <text x="160" y="223" font-size="13" fill="#1a1a2e" font-family="'Cascadia Code', Consolas, monospace">SysLog</text>
+  <text x="320" y="223" font-size="12" fill="#1a1a2e">报警日志 (InsertTime/Note/AlarmType/Operator/VarName)</text>
+  <text x="560" y="223" font-size="12" fill="#1a1a2e">ADO.NET 动态条件查询</text>
+  <rect x="680" y="208" width="48" height="22" rx="11" fill="#f0ebff"/>
+  <text x="704" y="223" text-anchor="middle" font-size="11" fill="#7c5cff">C + R</text>
+
+  <line x1="20" y1="242" x2="740" y2="242" stroke="#7c5cff" stroke-width="2"/>
+
+  <rect x="20" y="242" width="720" height="44" fill="#ffffff" stroke="#e4e4ec"/>
+  <rect x="20" y="242" width="8" height="44" fill="#00a3a3"/>
+  <text x="40" y="262" font-size="13" font-weight="680" fill="#00a3a3">INI 文件</text>
+  <text x="40" y="278" font-size="11" fill="#6b6b80" font-family="'Cascadia Code', Consolas, monospace">Win32 API</text>
+  <text x="160" y="267" font-size="13" fill="#1a1a2e" font-family="'Cascadia Code', Consolas, monospace">Device.ini</text>
+  <text x="320" y="267" font-size="12" fill="#1a1a2e">设备 IP / 端口 / 当前配方名</text>
+  <text x="560" y="267" font-size="12" fill="#1a1a2e">kernel32 GetPrivateProfileString</text>
+  <rect x="680" y="256" width="48" height="22" rx="11" fill="#f0ebff"/>
+  <text x="704" y="271" text-anchor="middle" font-size="11" fill="#7c5cff">R + W</text>
+
+  <rect x="20" y="286" width="720" height="44" fill="#ffffff" stroke="#e4e4ec"/>
+  <text x="160" y="311" font-size="13" fill="#1a1a2e" font-family="'Cascadia Code', Consolas, monospace">Recipe/*.ini</text>
+  <text x="320" y="311" font-size="12" fill="#1a1a2e">配方完整参数 (JSON 序列化存入单 Key)</text>
+  <text x="560" y="311" font-size="12" fill="#1a1a2e">JSONHelper + IniConfigHelper</text>
+  <rect x="680" y="300" width="48" height="22" rx="11" fill="#f0ebff"/>
+  <text x="704" y="315" text-anchor="middle" font-size="11" fill="#7c5cff">R + W</text>
+
+  <line x1="20" y1="330" x2="740" y2="330" stroke="#e07a3c" stroke-width="2"/>
+
+  <rect x="20" y="330" width="720" height="44" fill="#ffffff" stroke="#e4e4ec"/>
+  <rect x="20" y="330" width="8" height="44" fill="#e07a3c"/>
+  <text x="40" y="350" font-size="13" font-weight="680" fill="#e07a3c">Excel 文件</text>
+  <text x="40" y="366" font-size="11" fill="#6b6b80" font-family="'Cascadia Code', Consolas, monospace">MiniExcel</text>
+  <text x="160" y="355" font-size="13" fill="#1a1a2e" font-family="'Cascadia Code', Consolas, monospace">Group.xlsx</text>
+  <text x="320" y="355" font-size="12" fill="#1a1a2e">通讯组 (GroupName/Start/Length/StoreArea)</text>
+  <text x="560" y="355" font-size="12" fill="#1a1a2e">MiniExcel.Query&lt;T&gt; / SaveAs</text>
+  <rect x="680" y="344" width="48" height="22" rx="11" fill="#f0ebff"/>
+  <text x="704" y="359" text-anchor="middle" font-size="11" fill="#7c5cff">R + W</text>
+
+  <rect x="20" y="374" width="720" height="44" fill="#ffffff" stroke="#e4e4ec"/>
+  <text x="160" y="399" font-size="13" fill="#1a1a2e" font-family="'Cascadia Code', Consolas, monospace">Variable.xlsx</text>
+  <text x="320" y="399" font-size="12" fill="#1a1a2e">变量 (VarName/Start/DataType/Scale/Offset/PosAlarm...)</text>
+  <text x="560" y="399" font-size="12" fill="#1a1a2e">MiniExcel.Query&lt;T&gt; / SaveAs</text>
+  <rect x="680" y="388" width="48" height="22" rx="11" fill="#f0ebff"/>
+  <text x="704" y="403" text-anchor="middle" font-size="11" fill="#7c5cff">R + W</text>
+
+  <text x="20" y="450" font-size="11" fill="#6b6b80">数据访问全部参数化（SqlParameter 防注入），SQLHelper 提供事务能力但未被 Service 使用</text>
+</svg>

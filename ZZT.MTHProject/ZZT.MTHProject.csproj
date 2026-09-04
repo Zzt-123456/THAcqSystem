@@ -240,6 +240,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo.ico" />
+    <None Include="Resources\Images\login_new.jpg" />
+    <None Include="Resources\Images\MainPanelBG.jpg" />
+    <None Include="Resources\Images\Current_new%281%29.jpg" />
+    <None Include="Resources\Images\new_logo_42x42.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

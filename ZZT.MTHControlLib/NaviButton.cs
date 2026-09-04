@@ -25,6 +25,8 @@ namespace ZZT.MTHControlLib
     {
         /// <summary>
         /// 构造函数：初始化控件并设置控件样式
+        /// 设计器兼容说明：使用 LicenseManager.UsageMode 判断设计时环境，
+        ///   避免在设计器中执行资源加载等可能导致设计器加载失败的操作
         /// </summary>
         public NaviButton()
         {
@@ -41,6 +43,13 @@ namespace ZZT.MTHControlLib
             this.SetStyle(ControlStyles.Selectable, true);
             //SupportsTransparentBackColor：支持透明背景，便于背景图边缘平滑过渡
             this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+
+            //设计时环境下，不通过 UpdateImage 设置背景图，直接使用 Designer.cs 中的默认资源
+            //避免设计器因资源加载异常导致无法加载控件
+            if (LicenseManager.UsageMode == LicenseUsageMode.Runtime)
+            {
+                UpdateImage();
+            }
         }
 
         //是否处于选中状态，true 时显示选中背景图
@@ -59,7 +68,11 @@ namespace ZZT.MTHControlLib
             {
                 isSelected = value;
                 //状态变化后立即更新背景图
-                UpdateImage();
+                //仅在运行时更新，设计时由设计器通过 BackgroundImage 属性直接控制
+                if (LicenseManager.UsageMode == LicenseUsageMode.Runtime)
+                {
+                    UpdateImage();
+                }
             }
         }
 
@@ -76,7 +89,11 @@ namespace ZZT.MTHControlLib
             {
                 isLeft = value;
                 //方向变化后立即更新背景图
-                UpdateImage();
+                //仅在运行时更新，设计时由设计器通过 BackgroundImage 属性直接控制
+                if (LicenseManager.UsageMode == LicenseUsageMode.Runtime)
+                {
+                    UpdateImage();
+                }
             }
         }
 
@@ -88,6 +105,12 @@ namespace ZZT.MTHControlLib
         /// </summary>
         private void UpdateImage()
         {
+            //设计时保护：防止资源加载失败导致设计器崩溃
+            if (LicenseManager.UsageMode != LicenseUsageMode.Runtime)
+            {
+                return;
+            }
+
             if (this.isLeft)
             {
                 //左侧按钮：根据选中状态选择 LeftSelected 或 LeftUnSelected
@@ -113,7 +136,11 @@ namespace ZZT.MTHControlLib
             {
                 titleName = value;
                 //同步将文本写入内部 Label 控件显示
-                this.lbl_Title.Text = titleName;
+                //设计时保护：防止 lbl_Title 未初始化时引发空引用异常
+                if (this.lbl_Title != null)
+                {
+                    this.lbl_Title.Text = titleName;
+                }
             }
         }
 

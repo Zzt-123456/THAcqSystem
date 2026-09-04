@@ -25,7 +25,7 @@ namespace ZZT.MTHControlLib
     ///   会自动生成该事件的处理函数骨架。
     /// </summary>
     [DefaultEvent("ControlDoubleClick")]
-    public partial class TextSet : UserControl
+    public partial class TextSet : System.Windows.Forms.UserControl
     {
         /// <summary>
         /// 构造函数：初始化组件并设置控件样式。

@@ -60,7 +60,7 @@ namespace ZZT.MTHProject
             // 
             // panelEnhanced1
             // 
-            this.panelEnhanced1.BackgroundImage = global::ZZT.MTHProject.Properties.Resources.BackGround;
+            this.panelEnhanced1.BackgroundImage = global::ZZT.MTHProject.Properties.Resources.MainPanelBG;
             this.panelEnhanced1.Controls.Add(this.splitContainer1);
             this.panelEnhanced1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEnhanced1.Location = new System.Drawing.Point(0, 0);
@@ -102,7 +102,7 @@ namespace ZZT.MTHProject
             // 
             // btn_Apply
             // 
-            this.btn_Apply.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(27)))), ((int)(((byte)(78)))));
+            this.btn_Apply.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btn_Apply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Apply.Font = new System.Drawing.Font("微软雅黑", 11F);
             this.btn_Apply.ForeColor = System.Drawing.Color.White;
@@ -116,7 +116,7 @@ namespace ZZT.MTHProject
             // 
             // btn_Delete
             // 
-            this.btn_Delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(27)))), ((int)(((byte)(78)))));
+            this.btn_Delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btn_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Delete.Font = new System.Drawing.Font("微软雅黑", 11F);
             this.btn_Delete.ForeColor = System.Drawing.Color.White;
@@ -130,7 +130,7 @@ namespace ZZT.MTHProject
             // 
             // btn_Modify
             // 
-            this.btn_Modify.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(27)))), ((int)(((byte)(78)))));
+            this.btn_Modify.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btn_Modify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Modify.Font = new System.Drawing.Font("微软雅黑", 11F);
             this.btn_Modify.ForeColor = System.Drawing.Color.White;
@@ -144,7 +144,7 @@ namespace ZZT.MTHProject
             // 
             // btn_Add
             // 
-            this.btn_Add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(27)))), ((int)(((byte)(78)))));
+            this.btn_Add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btn_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Add.Font = new System.Drawing.Font("微软雅黑", 11F);
             this.btn_Add.ForeColor = System.Drawing.Color.White;
@@ -204,14 +204,14 @@ namespace ZZT.MTHProject
             this.dgv_Main.AllowUserToDeleteRows = false;
             this.dgv_Main.AllowUserToResizeColumns = false;
             this.dgv_Main.AllowUserToResizeRows = false;
-            this.dgv_Main.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(30)))), ((int)(((byte)(78)))));
+            this.dgv_Main.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.dgv_Main.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv_Main.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(30)))), ((int)(((byte)(78)))));
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(93)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_Main.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
@@ -229,7 +229,7 @@ namespace ZZT.MTHProject
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_Main.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_Main.EnableHeadersVisualStyles = false;
-            this.dgv_Main.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(146)))), ((int)(((byte)(235)))));
+            this.dgv_Main.GridColor = System.Drawing.Color.White;
             this.dgv_Main.Location = new System.Drawing.Point(43, 25);
             this.dgv_Main.Name = "dgv_Main";
             this.dgv_Main.ReadOnly = true;
@@ -276,7 +276,6 @@ namespace ZZT.MTHProject
             this.recipeControl4.Location = new System.Drawing.Point(6, 371);
             this.recipeControl4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.recipeControl4.Name = "recipeControl4";
-
             this.recipeControl4.Size = new System.Drawing.Size(377, 360);
             this.recipeControl4.TabIndex = 0;
             // 
@@ -288,7 +287,6 @@ namespace ZZT.MTHProject
             this.recipeControl6.Location = new System.Drawing.Point(693, 371);
             this.recipeControl6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.recipeControl6.Name = "recipeControl6";
-
             this.recipeControl6.Size = new System.Drawing.Size(377, 358);
             this.recipeControl6.TabIndex = 0;
             // 
@@ -300,7 +298,6 @@ namespace ZZT.MTHProject
             this.recipeControl3.Location = new System.Drawing.Point(693, 5);
             this.recipeControl3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.recipeControl3.Name = "recipeControl3";
-
             this.recipeControl3.Size = new System.Drawing.Size(377, 358);
             this.recipeControl3.TabIndex = 0;
             // 
@@ -312,7 +309,6 @@ namespace ZZT.MTHProject
             this.recipeControl5.Location = new System.Drawing.Point(351, 371);
             this.recipeControl5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.recipeControl5.Name = "recipeControl5";
-
             this.recipeControl5.Size = new System.Drawing.Size(377, 358);
             this.recipeControl5.TabIndex = 0;
             // 
@@ -324,7 +320,6 @@ namespace ZZT.MTHProject
             this.recipeControl2.Location = new System.Drawing.Point(351, 5);
             this.recipeControl2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.recipeControl2.Name = "recipeControl2";
-
             this.recipeControl2.Size = new System.Drawing.Size(377, 358);
             this.recipeControl2.TabIndex = 0;
             // 
@@ -336,7 +331,6 @@ namespace ZZT.MTHProject
             this.recipeControl1.Location = new System.Drawing.Point(6, 5);
             this.recipeControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.recipeControl1.Name = "recipeControl1";
-
             this.recipeControl1.Size = new System.Drawing.Size(377, 358);
             this.recipeControl1.TabIndex = 0;
             // 

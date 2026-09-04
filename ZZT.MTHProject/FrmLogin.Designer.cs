@@ -53,7 +53,7 @@
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(125, 207);
+            this.label2.Location = new System.Drawing.Point(165, 233);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(217, 1);
             this.label2.TabIndex = 1;
@@ -61,18 +61,18 @@
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(125, 165);
+            this.label3.Location = new System.Drawing.Point(166, 173);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(217, 1);
             this.label3.TabIndex = 1;
             // 
             // txt_LoginName
             // 
-            this.txt_LoginName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(85)))));
+            this.txt_LoginName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.txt_LoginName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_LoginName.Font = new System.Drawing.Font("微软雅黑", 12.5F);
             this.txt_LoginName.ForeColor = System.Drawing.Color.White;
-            this.txt_LoginName.Location = new System.Drawing.Point(127, 140);
+            this.txt_LoginName.Location = new System.Drawing.Point(168, 148);
             this.txt_LoginName.Name = "txt_LoginName";
             this.txt_LoginName.Size = new System.Drawing.Size(213, 22);
             this.txt_LoginName.TabIndex = 0;
@@ -82,11 +82,11 @@
             // 
             // txt_Pwd
             // 
-            this.txt_Pwd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(85)))));
+            this.txt_Pwd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.txt_Pwd.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_Pwd.Font = new System.Drawing.Font("微软雅黑", 12.5F);
             this.txt_Pwd.ForeColor = System.Drawing.Color.White;
-            this.txt_Pwd.Location = new System.Drawing.Point(127, 185);
+            this.txt_Pwd.Location = new System.Drawing.Point(168, 211);
             this.txt_Pwd.Name = "txt_Pwd";
             this.txt_Pwd.PasswordChar = '*';
             this.txt_Pwd.Size = new System.Drawing.Size(213, 22);
@@ -97,11 +97,11 @@
             // 
             // btn_Login
             // 
-            this.btn_Login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(27)))), ((int)(((byte)(78)))));
+            this.btn_Login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btn_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Login.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn_Login.ForeColor = System.Drawing.Color.White;
-            this.btn_Login.Location = new System.Drawing.Point(112, 226);
+            this.btn_Login.Location = new System.Drawing.Point(137, 279);
             this.btn_Login.Name = "btn_Login";
             this.btn_Login.Size = new System.Drawing.Size(220, 31);
             this.btn_Login.TabIndex = 2;
@@ -118,7 +118,7 @@
             this.btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Close.Font = new System.Drawing.Font("微软雅黑", 12.5F);
             this.btn_Close.ForeColor = System.Drawing.Color.White;
-            this.btn_Close.Location = new System.Drawing.Point(388, 8);
+            this.btn_Close.Location = new System.Drawing.Point(456, 11);
             this.btn_Close.Name = "btn_Close";
             this.btn_Close.Size = new System.Drawing.Size(38, 39);
             this.btn_Close.TabIndex = 8;
@@ -130,8 +130,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::ZZT.MTHProject.Properties.Resources.Login;
-            this.ClientSize = new System.Drawing.Size(430, 330);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(499, 333);
             this.Controls.Add(this.btn_Close);
             this.Controls.Add(this.btn_Login);
             this.Controls.Add(this.txt_Pwd);

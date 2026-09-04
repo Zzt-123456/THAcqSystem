@@ -21,7 +21,7 @@ namespace ZZT.MTHControlLib
     /// 该控件为 UserControl 复合控件，内部子控件的绘制由各自负责，控件自身通过
     ///   SetStyle 启用双缓冲等 GDI+ 优化样式以避免闪烁。
     /// </summary>
-    public partial class RecipeControl : UserControl
+    public partial class RecipeControl : System.Windows.Forms.UserControl
     {
         /// <summary>
         /// 构造函数：初始化组件并设置控件样式。

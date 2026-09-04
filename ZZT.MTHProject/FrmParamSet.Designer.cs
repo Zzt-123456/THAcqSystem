@@ -87,7 +87,7 @@ namespace ZZT.MTHProject
             // 
             // PanelMain
             // 
-            this.PanelMain.BackgroundImage = global::ZZT.MTHProject.Properties.Resources.BackGround;
+            this.PanelMain.BackgroundImage = global::ZZT.MTHProject.Properties.Resources.MainPanelBG;
             this.PanelMain.Controls.Add(this.checkBoxEx4);
             this.PanelMain.Controls.Add(this.checkBoxEx12);
             this.PanelMain.Controls.Add(this.checkBoxEx8);
@@ -730,7 +730,7 @@ namespace ZZT.MTHProject
             // 
             // btn_VarConfig
             // 
-            this.btn_VarConfig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(27)))), ((int)(((byte)(78)))));
+            this.btn_VarConfig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btn_VarConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_VarConfig.Font = new System.Drawing.Font("微软雅黑", 11F);
             this.btn_VarConfig.ForeColor = System.Drawing.Color.White;
@@ -744,7 +744,7 @@ namespace ZZT.MTHProject
             // 
             // btn_Cancel
             // 
-            this.btn_Cancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(27)))), ((int)(((byte)(78)))));
+            this.btn_Cancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Cancel.Font = new System.Drawing.Font("微软雅黑", 11F);
             this.btn_Cancel.ForeColor = System.Drawing.Color.White;
@@ -758,7 +758,7 @@ namespace ZZT.MTHProject
             // 
             // btn_GroupConfig
             // 
-            this.btn_GroupConfig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(27)))), ((int)(((byte)(78)))));
+            this.btn_GroupConfig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btn_GroupConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_GroupConfig.Font = new System.Drawing.Font("微软雅黑", 11F);
             this.btn_GroupConfig.ForeColor = System.Drawing.Color.White;
@@ -772,7 +772,7 @@ namespace ZZT.MTHProject
             // 
             // btn_Sure
             // 
-            this.btn_Sure.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(27)))), ((int)(((byte)(78)))));
+            this.btn_Sure.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btn_Sure.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Sure.Font = new System.Drawing.Font("微软雅黑", 11F);
             this.btn_Sure.ForeColor = System.Drawing.Color.White;
@@ -908,7 +908,7 @@ namespace ZZT.MTHProject
             // 
             // title1
             // 
-            this.title1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
+            this.title1.BackColor = System.Drawing.Color.Transparent;
             this.title1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("title1.BackgroundImage")));
             this.title1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.title1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));

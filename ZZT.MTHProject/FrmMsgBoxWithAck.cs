@@ -18,7 +18,7 @@ namespace ZZT.MTHProject
     /// 使用场景：需要用户确认的操作，如“导出成功，是否立即打开？”等。
     /// 窗体无边框，通过 Panel_MouseDown/Panel_MouseMove 实现拖动。
     /// </summary>
-    public partial class FrmMsgBoxWithAck : Form
+    public partial class FrmMsgBoxWithAck : System.Windows.Forms.Form
     {
         /// <summary>
         /// 构造函数：根据传入的内容和标题初始化消息框。

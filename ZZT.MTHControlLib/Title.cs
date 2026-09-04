@@ -22,6 +22,8 @@ namespace ZZT.MTHControlLib
     {
         /// <summary>
         /// 构造函数：初始化组件并设置控件样式。
+        /// 设计器兼容：通过 LicenseManager.UsageMode 区分设计时/运行时，
+        ///   避免设计器中加载全局静态资源导致控件类型加载失败。
         /// </summary>
         public Title()
         {
@@ -37,6 +39,13 @@ namespace ZZT.MTHControlLib
             this.SetStyle(ControlStyles.Selectable, true);
             //SupportsTransparentBackColor：支持透明背景色，便于与父容器叠加
             this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+
+            //仅在运行时加载 Title 背景图资源（设计时由宿主容器/设计器属性控制）
+            //避免设计器因资源解析路径问题导致 Title 类型反射失败
+            if (LicenseManager.UsageMode == LicenseUsageMode.Runtime)
+            {
+                this.BackgroundImage = Properties.Resources.Title;
+            }
         }
 
         //标题名称字段：默认“标题名称”，显示在标题栏标签上

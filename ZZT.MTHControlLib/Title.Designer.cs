@@ -1,4 +1,4 @@
-﻿namespace ZZT.MTHControlLib
+namespace ZZT.MTHControlLib
 {
     partial class Title
     {
@@ -49,7 +49,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(28)))), ((int)(((byte)(68)))));
-            this.BackgroundImage = global::ZZT.MTHControlLib.Properties.Resources.Title;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.lbl_Title);
             this.DoubleBuffered = true;

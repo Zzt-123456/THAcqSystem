@@ -23,7 +23,7 @@ namespace ZZT.MTHControlLib
     /// 绘图说明：本控件本身为复合控件，GDI+ 绘制由内部子控件各自负责，
     ///   通过 SetStyle 启用双缓冲等优化样式避免闪烁。
     /// </summary>
-    public partial class TextSetEx : UserControl
+    public partial class TextSetEx : System.Windows.Forms.UserControl
     {
         /// <summary>
         /// 构造函数：初始化组件并设置控件样式。

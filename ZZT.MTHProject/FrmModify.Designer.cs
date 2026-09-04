@@ -47,7 +47,7 @@ namespace ZZT.MTHProject
             this.panelEx1.BackColor = System.Drawing.Color.Transparent;
             this.panelEx1.BackgroundImage = global::ZZT.MTHProject.Properties.Resources.TitleBG;
             this.panelEx1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelEx1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(79)))), ((int)(((byte)(150)))));
+            this.panelEx1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
             this.panelEx1.BorderWidth = 2;
             this.panelEx1.BottomGap = 1;
             this.panelEx1.Controls.Add(this.txt_SetValue);
@@ -83,7 +83,7 @@ namespace ZZT.MTHProject
             // 
             // btn_Cancel
             // 
-            this.btn_Cancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(27)))), ((int)(((byte)(78)))));
+            this.btn_Cancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Cancel.Font = new System.Drawing.Font("微软雅黑", 11F);
             this.btn_Cancel.ForeColor = System.Drawing.Color.White;
@@ -97,7 +97,7 @@ namespace ZZT.MTHProject
             // 
             // btn_Sure
             // 
-            this.btn_Sure.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(27)))), ((int)(((byte)(78)))));
+            this.btn_Sure.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btn_Sure.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Sure.Font = new System.Drawing.Font("微软雅黑", 11F);
             this.btn_Sure.ForeColor = System.Drawing.Color.White;

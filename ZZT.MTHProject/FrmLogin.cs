@@ -13,7 +13,7 @@ using ZZT.MTHModels;
 
 namespace ZZT.MTHProject
 {
-    public partial class FrmLogin : Form
+    public partial class FrmLogin : System.Windows.Forms.Form
     {
         public FrmLogin()
         {
@@ -60,14 +60,16 @@ namespace ZZT.MTHProject
                 this.txt_LoginName.Focus();
                 return;
             }
-            else
-            {
-                //登录成功：设置对话框返回值为OK，主程序据此进入主界面
-                this.DialogResult = DialogResult.OK;
+            
+            
+            //登录成功：设置对话框返回值为OK，主程序据此进入主界面
+            this.DialogResult = DialogResult.OK;
 
-                //存储登录用户信息到全局变量，供后续界面鉴权使用
-                CommonMethods.CurrentAdmin = sysAdmin;
-            }
+            //存储登录用户信息到全局变量，供后续界面鉴权使用
+            CommonMethods.CurrentAdmin = sysAdmin;
+
+            return;
+            
         }
 
         #region 无边框拖动

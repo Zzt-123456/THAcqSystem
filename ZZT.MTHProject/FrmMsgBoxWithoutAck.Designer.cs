@@ -76,7 +76,7 @@
             // 
             // btn_Sure
             // 
-            this.btn_Sure.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(27)))), ((int)(((byte)(78)))));
+            this.btn_Sure.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btn_Sure.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Sure.Font = new System.Drawing.Font("微软雅黑", 11F);
             this.btn_Sure.ForeColor = System.Drawing.Color.White;
